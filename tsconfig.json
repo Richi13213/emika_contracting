@@ -18,8 +18,31 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@sharing/organisms": ["src/ui/sharing/organisms/index.ts"],
+      "@sharing/molecules": ["src/ui/sharing/molecules/index.ts"],
+      "@sharing/atoms": ["src/ui/sharing/atoms/index.ts"],
+      "@typing/*": ["src/typing/*"],
+      "@atoms": ["src/ui/home/atoms/index.ts"],
+      "@molecules": ["src/ui/home/molecules/index.ts"],
+      "@organisms": ["src/ui/home/organisms/index.ts"],
+      "@images/*": ["src/assets/images/*"],
+      "@icons/*": ["src/assets/icons/*"],
+      "@mixins": ["src/styles/mixins.ts"],
+      "@data/*": ["src/logic/data/*"],
+      "@schemas/*": ["src/logic/schemas/*"],
+      "@services/*": ["src/logic/services/*"],
+      "@handlers/*": ["src/logic/handlers/*"],
+      "@hooks": ["src/logic/utils/hooks/index.ts"],
+      "@utils/*": ["src/logic/utils/*"],
+      "@constants/*": ["src/logic/utils/constants/*"],
+      "@functions/*": ["src/logic/utils/functions/*"],
+      "@styles/*": ["src/styles/*"],
+      "@config": ["src/logic/config.ts"]
+    }
   },
-  "include": ["src"],
+  "include": ["src", "**/*.ts", "**/*.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
