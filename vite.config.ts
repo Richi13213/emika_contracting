@@ -8,93 +8,105 @@ export default defineConfig({
     alias: [
       {
         find: "@services",
-        replacement: path.resolve(__dirname, "src/logic/services"),
+        replacement: path.resolve(process.cwd(), "src/logic/services"),
       },
       {
         find: "@sharing/organisms",
         replacement: path.resolve(
-          __dirname,
+          process.cwd(),
           "src/ui/sharing/organisms/index.ts"
         ),
       },
       {
         find: "@sharing/molecules",
         replacement: path.resolve(
-          __dirname,
+          process.cwd(),
           "src/ui/sharing/molecules/index.ts"
         ),
       },
       {
         find: "@sharing/atoms",
-        replacement: path.resolve(__dirname, "src/ui/sharing/atoms/index.ts"),
+        replacement: path.resolve(
+          process.cwd(),
+          "src/ui/sharing/atoms/index.ts"
+        ),
       },
       {
         find: "@typing",
-        replacement: path.resolve(__dirname, "src/typing"),
+        replacement: path.resolve(process.cwd(), "src/typing"),
       },
       {
         find: "@atoms",
-        replacement: path.resolve(__dirname, "src/ui/home/atoms/index.ts"),
+        replacement: path.resolve(process.cwd(), "src/ui/home/atoms/index.ts"),
       },
       {
         find: "@molecules",
-        replacement: path.resolve(__dirname, "src/ui/home/molecules/index.ts"),
+        replacement: path.resolve(
+          process.cwd(),
+          "src/ui/home/molecules/index.ts"
+        ),
       },
       {
         find: "@organisms",
-        replacement: path.resolve(__dirname, "src/ui/home/organisms/index.ts"),
+        replacement: path.resolve(
+          process.cwd(),
+          "src/ui/home/organisms/index.ts"
+        ),
       },
       {
         find: "@images",
-        replacement: path.resolve(__dirname, "src/assets/images"),
+        replacement: path.resolve(process.cwd(), "src/assets/images"),
       },
       {
         find: "@icons",
-        replacement: path.resolve(__dirname, "src/assets/icons"),
+        replacement: path.resolve(process.cwd(), "src/assets/icons"),
       },
       {
         find: "@mixins",
-        replacement: path.resolve(__dirname, "src/styles/mixins.ts"),
+        replacement: path.resolve(process.cwd(), "src/styles/mixins.ts"),
       },
       {
         find: "@data",
-        replacement: path.resolve(__dirname, "src/logic/data"),
+        replacement: path.resolve(process.cwd(), "src/logic/data"),
       },
       {
         find: "@schemas",
-        replacement: path.resolve(__dirname, "src/logic/schemas"),
+        replacement: path.resolve(process.cwd(), "src/logic/schemas"),
       },
       {
         find: "@services",
-        replacement: path.resolve(__dirname, "src/logic/services"),
+        replacement: path.resolve(process.cwd(), "src/logic/services"),
       },
       {
         find: "@handlers",
-        replacement: path.resolve(__dirname, "src/logic/handlers"),
+        replacement: path.resolve(process.cwd(), "src/logic/handlers"),
       },
       {
         find: "@hooks",
-        replacement: path.resolve(__dirname, "src/logic/utils/hooks/index.ts"),
+        replacement: path.resolve(
+          process.cwd(),
+          "src/logic/utils/hooks/index.ts"
+        ),
       },
       {
         find: "@utils",
-        replacement: path.resolve(__dirname, "src/logic/utils"),
+        replacement: path.resolve(process.cwd(), "src/logic/utils"),
       },
       {
         find: "@constants",
-        replacement: path.resolve(__dirname, "src/logic/utils/constants"),
+        replacement: path.resolve(process.cwd(), "src/logic/utils/constants"),
       },
       {
         find: "@functions",
-        replacement: path.resolve(__dirname, "src/logic/utils/functions"),
+        replacement: path.resolve(process.cwd(), "src/logic/utils/functions"),
       },
       {
         find: "@styles",
-        replacement: path.resolve(__dirname, "src/styles"),
+        replacement: path.resolve(process.cwd(), "src/styles"),
       },
       {
         find: "@config",
-        replacement: path.resolve(__dirname, "src/logic/config.ts"),
+        replacement: path.resolve(process.cwd(), "src/logic/config.ts"),
       },
     ],
   },
