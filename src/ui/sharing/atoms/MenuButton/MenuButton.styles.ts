@@ -1,5 +1,4 @@
 import { css, cx } from "@emotion/css";
-import { flex, content } from "@mixins";
 import * as responsive from "./MenuButton.styles.responsive";
 
 export const hamburguer = cx(

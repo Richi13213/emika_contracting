@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { MenuButton } from "@sharing/atoms";
 import { NavList } from "@sharing/molecules";
 import * as styles from "./Header.styles";
-import { HeaderProps } from "@typing/props";
 
-export default function Header({ reference }: HeaderProps) {
+export default function Header() {
   const [active, setActive] = useState<boolean>(false);
 
   const handleToggleMenu = () => {
@@ -12,7 +11,7 @@ export default function Header({ reference }: HeaderProps) {
   };
 
   return (
-    <header ref={reference} className={styles.header}>
+    <header className={styles.header}>
       <nav className={styles.container}>
         <p className={styles.logo}>EMIKA</p>
         <MenuButton onChange={handleToggleMenu} />

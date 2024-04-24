@@ -1,5 +1,5 @@
 import { css, cx } from "@emotion/css";
-import { flex, content } from "@mixins";
+import { flex } from "@mixins";
 
 export const main_container = cx(
   flex({}),

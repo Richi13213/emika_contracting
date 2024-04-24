@@ -1,5 +1,5 @@
-import { css, cx } from "@emotion/css";
-import { rText, forsize } from "@mixins";
+import { cx } from "@emotion/css";
+import { rText } from "@mixins";
 
 export const title = cx(
   rText({

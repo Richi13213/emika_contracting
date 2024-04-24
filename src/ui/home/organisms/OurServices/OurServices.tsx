@@ -1,6 +1,4 @@
-import React, { useRef, useEffect } from "react";
 import { Title } from "@sharing/atoms";
-import { ReferenceProp } from "@typing/props";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ServiceCard } from "@molecules";
 import { ServiceCardData } from "@typing/props";
@@ -15,7 +13,7 @@ import * as styles from "./OurServices.styles";
 
 import { EffectCoverflow, Navigation } from "swiper/modules";
 
-export default function OurServices({ reference }: ReferenceProp) {
+export default function OurServices() {
   return (
     <section id="services" className={styles.main_container}>
       <div className={styles.container}>

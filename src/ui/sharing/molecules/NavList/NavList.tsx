@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "@sharing/atoms";
 import { NavListProps } from "@typing/props";
 import * as styles from "./NavList.styles";

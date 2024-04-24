@@ -1,4 +1,3 @@
-import React from "react";
 import { Title } from "@sharing/atoms";
 import * as styles from "./ContactUs.styles";
 

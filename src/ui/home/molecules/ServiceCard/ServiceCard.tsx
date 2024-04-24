@@ -1,4 +1,3 @@
-import React from "react";
 import { ServiceCardData } from "@typing/props";
 import * as styles from "./ServiceCard.styles";
 

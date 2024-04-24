@@ -1,10 +1,8 @@
-import React from "react";
 import { Title } from "@sharing/atoms";
 import Image from "@images/about_us/image.webp";
-import { ReferenceProp } from "@typing/props";
 import * as styles from "./AboutUs.styles";
 
-export default function AboutUs({ reference }: ReferenceProp) {
+export default function AboutUs() {
   const content = [
     "We're committed to being your trusted partner for a wide array of construction and maintenance services. ",
     "At EMIKA, we take pride in delivering comprehensive solutions tailored to meet the needs of businesses and communities across our service area. ",

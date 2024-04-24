@@ -1,10 +1,8 @@
-import React from "react";
-import { ReferenceProp } from "@typing/props";
 import * as styles from "./Hero.styles";
 
-export default function Hero({ reference }: ReferenceProp) {
+export default function Hero() {
   return (
-    <section className={styles.main_container({ reference })}>
+    <section className={styles.main_container}>
       <div className={styles.container}>
         <article className={styles.article}>
           <h1 className={styles.title}>

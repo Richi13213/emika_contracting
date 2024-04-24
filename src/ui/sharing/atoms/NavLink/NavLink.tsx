@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLinkProps } from "@typing/props";
 
 import * as styles from "./NavLink.styles";

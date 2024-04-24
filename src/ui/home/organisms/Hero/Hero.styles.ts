@@ -2,7 +2,6 @@ import { css, cx, keyframes } from "@emotion/css";
 import { flex, content } from "@mixins";
 import * as responsive from "./Hero.styles.responsive";
 import Bg from "@images/sharing/bg.webp";
-import { ReferenceProp } from "@typing/props";
 
 const fadeFromBottom = keyframes`
   from {
@@ -28,17 +27,14 @@ const buttonFill = keyframes`
     height: 100%;
   }
 `;
-export const main_container = ({ reference }: ReferenceProp) =>
-  cx(
-    flex({}),
-    css`
-      width: 100%;
-      height: calc(
-        100vh - ${reference.current ? reference.current.clientHeight : 0}px
-      );
-      background: url(${Bg}) no-repeat center/cover;
-    `
-  );
+export const main_container = cx(
+  flex({}),
+  css`
+    width: 100%;
+    height: 100%;
+    background: url(${Bg}) no-repeat center/cover;
+  `
+);
 
 export const container = cx(
   content({}),

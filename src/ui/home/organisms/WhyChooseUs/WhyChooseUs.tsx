@@ -1,11 +1,9 @@
-import React from "react";
 import { Title } from "@sharing/atoms";
 import Image from "@images/about_us/image.webp";
-import { ReferenceProp } from "@typing/props";
 import { WhyUsData } from "@typing/data";
 import * as styles from "./WhyChooseUs.styles";
 
-export default function WhyChooseUs({ reference }: ReferenceProp) {
+export default function WhyChooseUs() {
   const content: Array<WhyUsData> = [
     {
       main: "Experience and Expertise: ",
