@@ -31,7 +31,7 @@ export const content_container = cx(
   css`
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 2fr 1fr;
     column-gap: 50px;
   `
 );

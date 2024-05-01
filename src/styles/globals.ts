@@ -17,6 +17,7 @@ export const globals = css`
 
   :root {
     --accent-color: #3498db;
+    --accent-color-hover: #d7efff;
     --text-color: #000000;
     --text-black: #000000;
     --text-white: #ffffff;

@@ -95,3 +95,15 @@ export interface ForsizePRopertiesConfig {
   queries: Devices;
   css_propertie: string;
 }
+export interface InputStyleProps {
+  inputError: boolean;
+  inputValid: boolean;
+}
+
+export interface SelectStyleProps extends InputStyleProps {
+  isOpen: boolean;
+}
+
+export interface LabelInputStyleProps extends InputStyleProps {
+  focused: boolean;
+}

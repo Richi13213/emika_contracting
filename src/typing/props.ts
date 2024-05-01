@@ -1,6 +1,6 @@
-import { ReactNode, RefObject } from "react";
+import { ReactNode, RefObject, FocusEvent, ChangeEvent } from "react";
 import type { HTMLAttributes } from "react";
-
+import { LabelInputStyleProps } from "@typing/styles";
 export interface ChildrenProp {
   children: ReactNode | ReactNode[];
 }
@@ -38,4 +38,44 @@ export interface ServiceCardData {
   title: string;
   image: ImageData;
   content: string;
+}
+
+export interface LabelInputProps extends ChildrenProp, LabelInputStyleProps {
+  id: string;
+}
+
+export interface InputProps {
+  id: string;
+  name: string;
+  type: string;
+  value: string;
+  error: string;
+  touched: boolean;
+  inputValid: boolean;
+  inputError: boolean;
+  handleFocus: () => void;
+  onChange: (e: ChangeEvent<any>) => void;
+  onBlur: (e: FocusEvent<any>) => void;
+}
+
+export type InputFormProps = Omit<
+  InputProps,
+  "inputValid" | "inputError" | "handleFocus"
+> & {
+  label: string;
+};
+
+export interface FormikHandlerParams {
+  field: string;
+  value?: string;
+}
+export interface SelectProps {
+  id: string;
+  value: string;
+  error: string;
+  label: string;
+  touched: boolean;
+  handleManualTouched: (data: FormikHandlerParams) => void;
+  handleManualError: (data: FormikHandlerParams) => void;
+  handleManualValues: (data: FormikHandlerParams) => void;
 }

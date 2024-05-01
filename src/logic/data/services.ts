@@ -72,3 +72,13 @@ export const servicesData: Array<ServiceCardData> = [
       "Simplify your construction projects by entrusting us as your trusted general contractor.",
   },
 ];
+
+export const servicesOptions: Array<string> = [
+  "Line painting",
+  "Curb and Sidewalk Repair",
+  "Asphalt Maintenance",
+  "Building Repair",
+  "Landscaping",
+  "Snow Removal",
+  "General Contracting",
+];

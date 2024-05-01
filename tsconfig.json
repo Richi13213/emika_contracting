@@ -35,9 +35,9 @@
       "@schemas/*": ["src/logic/schemas/*"],
       "@services/*": ["src/logic/services/*"],
       "@handlers/*": ["src/logic/handlers/*"],
-      "@hooks": ["src/logic/utils/hooks/index.ts"],
+      "@hooks": ["src/logic/hooks/index.ts"],
       "@utils/*": ["src/logic/utils/*"],
-      "@constants/*": ["src/logic/utils/constants/*"],
+      "@constants/*": ["src/logic/constants/*"],
       "@functions/*": ["src/logic/utils/functions/*"],
       "@styles/*": ["src/styles/*"],
       "@config": ["src/logic/config.ts"]
