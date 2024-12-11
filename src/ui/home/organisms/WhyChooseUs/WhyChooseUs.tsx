@@ -1,7 +1,11 @@
 import { Title } from "@sharing/atoms";
-import Image from "@images/about_us/image.webp";
 import { WhyUsData } from "@typing/data";
 import * as styles from "./WhyChooseUs.styles";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
 
 export default function WhyChooseUs() {
   const content: Array<WhyUsData> = [
@@ -30,23 +34,60 @@ export default function WhyChooseUs() {
     <section id="why_us" className={styles.main_container}>
       <div className={styles.container}>
         <Title>Why Choose Us</Title>
-        <p className={styles.text}>
-          At Emika Contracting, we are committed to excellence in every project
-          we undertake. Why choose us?
-        </p>
-        <div className={styles.content_container}>
-          <ul className={styles.left_container}>
-            {content.map(({ main, content }: WhyUsData, index) => (
-              <li key={`about-us-section-text-${index}`}>
-                <p className={styles.text}>
-                  <span>{main}</span>
-                  {content}
-                </p>
-              </li>
-            ))}
-          </ul>
-          <img className={styles.img} src={Image} alt="About us image" />
-        </div>
+
+        <VerticalTimeline lineColor="var(--accent-color)">
+          {content.map(({ main, content }: WhyUsData, index: number) => {
+            return (
+              <>
+                {index % 2 === 0 ? (
+                  <VerticalTimelineElement
+                    key={`vertical-timeline-${index}-why-us`}
+                    contentStyle={{
+                      background: "var(--accent-color)",
+                      color: "var(--hero-text)",
+                    }}
+                    contentArrowStyle={{
+                      borderRight: "7px solid  var(--accent-color)",
+                    }}
+                    iconStyle={{
+                      background: "var(--hero-text)",
+                      border: "9px solid var(--accent-color)",
+                      boxShadow: "0px 0px 11px -1px rgba(0,0,0,0.75)",
+                      transform: "scale(.5)",
+                      transition: "all 0.5s ease-in-out"
+                    }}
+                  >
+                    <h3 className="vertical-timeline-element-title">{main}</h3>
+                    <p>{content}</p>
+                  </VerticalTimelineElement>
+                ) : (
+                  <VerticalTimelineElement
+                    key={`vertical-timeline-${index}-why-us`}
+                    className="vertical-timeline-element--work"
+                    contentStyle={{
+                      boxShadow: "0px 0px 11px -1px rgba(0,0,0,0.75)",
+                      color: "var(--accent-color)",
+                      background: "var(--hero-text)",
+                    }}
+                    contentArrowStyle={{
+                      borderRight: "7px solid  var(--hero-text)",
+                    }}
+                    iconStyle={{
+                      background: "var(--accent-color)",
+                      border: "9px solid var(--hero-text)",
+                      boxShadow: "0px 0px 11px -1px rgba(0,0,0,0.75)",
+                      transform: "scale(.5)",
+                      transition: "all 0.5s ease-in-out"
+                    }}
+                  >
+                    <h3 className="vertical-timeline-element-title">{main}</h3>
+                    <p>{content}</p>
+                  </VerticalTimelineElement>
+                )}
+              </>
+            );
+          })}
+        </VerticalTimeline>
       </div>
     </section>
   );

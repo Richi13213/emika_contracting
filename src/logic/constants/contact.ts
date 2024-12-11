@@ -7,3 +7,7 @@ export const INITIAL_VALUES: InitialValiesInterface = {
   phone_number: "",
   service: "",
 };
+
+export const REQUIRED_ERROR = "Field required";
+export const NUMBER_ERROR = "Invalid number format";
+export const EMAIL_ERROR = "Invalid number format";

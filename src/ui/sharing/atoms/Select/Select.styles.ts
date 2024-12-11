@@ -35,7 +35,7 @@ export const select_input = ({
       background-color: #fff;
       background-clip: padding-box;
       border: 1px solid
-        ${inputError ? "#DC3545" : inputValid ? "#198754" : "rgb(0, 0, 0, 0.4)"};
+        ${inputError ? "#DC3545" : (inputValid ? "#198754" : "rgb(0, 0, 0, 0.4)")};
       border-radius: 8px;
       &::after {
         content: "";
@@ -48,6 +48,9 @@ export const select_input = ({
         top: 50%;
         transition: all 0.3s ease-in-out;
         transform: translateY(-50%) ${isOpen && "rotate(180deg)"};
+      }
+      &:hover {
+        cursor: pointer;
       }
     `
   );
@@ -66,6 +69,7 @@ export const option_container = cx(
     overflow-x: hidden;
     overflow-y: auto;
     border: 1px solid rgb(0, 0, 0, 0.4);
+    z-index: 10;
   `
 );
 
@@ -78,6 +82,7 @@ export const option = cx(
     padding: 10px 0.75rem;
     &:hover {
       background: var(--accent-color-hover);
+      cursor: pointer;
     }
   `
 );

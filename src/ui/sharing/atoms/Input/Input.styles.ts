@@ -15,7 +15,7 @@ export const input = ({ inputError, inputValid }: InputStyleProps) => css`
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid
-    ${inputError ? "#DC3545" : inputValid ? "#198754" : "rgb(0, 0, 0, 0.4)"};
+    ${inputError ? "#DC3545" : (inputValid ? "#198754" : "rgb(0, 0, 0, 0.4)")};
   border-radius: 8px;
   transition: border-color 0.15s ease-in-out;
 `;

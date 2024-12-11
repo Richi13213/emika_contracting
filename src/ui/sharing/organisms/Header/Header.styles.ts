@@ -2,7 +2,7 @@ import { css, cx } from "@emotion/css";
 import { flex, content } from "@mixins";
 import * as responsive from "./Header.styles.responsive";
 
-export const header = cx(
+export const header = (active:boolean) => cx(
   flex({}),
   css`
     width: 100%;
@@ -12,6 +12,17 @@ export const header = cx(
     background: #ffffff;
     box-shadow: 0px 14px 23px -3px rgba(0, 0, 0, 0.25);
     z-index: 9999;
+    &::after {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: rgb(0, 0, 0, 0.7);
+      top: 0;
+      left: 0;
+      transform: ${active ? `translateX(0%)` : `translateX(100%)`};
+      z-index: 8888;
+    }
   `
 );
 

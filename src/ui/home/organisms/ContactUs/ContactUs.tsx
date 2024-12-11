@@ -9,6 +9,16 @@ export default function ContactUs() {
         <Title>Contact Us</Title>
         <div className={styles.content_container}>
           <ContactForm />
+          <div className={styles.text_container}>
+            <p className={styles.text}>
+              <b>Ready to start your next project with Emika Contracting?</b>
+            </p>
+            <p className={styles.text}>
+              Contact us today for a free consultation and discover how we can
+              help you achieve your construction and maintenance goals
+              efficiently and cost-effectively!
+            </p>
+          </div>
         </div>
       </div>
     </section>

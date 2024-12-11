@@ -1,4 +1,4 @@
-import { InputLabel, Input } from "@sharing/atoms";
+import { InputLabel, Input, ErrorLabel } from "@sharing/atoms";
 import { useInput } from "@hooks";
 import type { InputFormProps } from "@typing/props";
 import * as styles from "./InputForm.styles";
@@ -11,7 +11,7 @@ export default function InputForm({
   ...props
 }: InputFormProps) {
   const { handleFocus, focused } = useInput();
-  const inputError = !!(touched && error && props.value !== "");
+  const inputError = !!(touched && error);
   const inputValid = touched && !error;
   const inputProps = {
     id,
@@ -34,6 +34,11 @@ export default function InputForm({
     <div className={styles.input_container}>
       <InputLabel {...labelProps}>{label}</InputLabel>
       <Input {...inputProps} />
+      {error && touched && 
+        <ErrorLabel>
+          {error}
+        </ErrorLabel>
+      }
     </div>
   );
 }

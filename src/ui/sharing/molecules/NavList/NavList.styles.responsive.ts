@@ -6,16 +6,20 @@ export const nav_list = (active: boolean) =>
     forsize({
       "tablet-landscape": cx(
         css`
-          min-width: 30%;
-          padding: 20px;
+          width: 100%;
+          max-width: 50%;
+          height: 100%;
+          padding: 50px 20px;
           gap: 0;
-          position: absolute;
+          position: fixed;
           background: #fff;
-          top: 100%;
-          transition: all 0.3s ease-in-out;
+          top: 0;
           right: 0;
+          transition: all 0.3s ease-in-out;
           transform: ${active ? `translateX(0%)` : `translateX(100%)`};
           flex-direction: column;
+          justify-content: flex-start;
+          z-index: 9999;
         `
       ),
     })

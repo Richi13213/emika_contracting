@@ -37,7 +37,6 @@ export interface ImageData {
 export interface ServiceCardData {
   title: string;
   image: ImageData;
-  content: string;
 }
 
 export interface LabelInputProps extends ChildrenProp, LabelInputStyleProps {

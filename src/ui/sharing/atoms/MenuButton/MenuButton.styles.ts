@@ -4,6 +4,7 @@ import * as responsive from "./MenuButton.styles.responsive";
 export const hamburguer = cx(
   css`
     display: none;
+    z-index: 999999;
     & input {
       cursor: pointer;
       display: none;
@@ -18,6 +19,9 @@ export const hamburguer = cx(
     input:checked + svg #line_path {
       stroke-dasharray: 20 300;
       stroke-dashoffset: -32.42;
+    }
+    &:hover {
+      cursor: pointer;
     }
   `,
   responsive.hamburguer

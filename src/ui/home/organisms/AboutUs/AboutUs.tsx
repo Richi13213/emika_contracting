@@ -4,25 +4,22 @@ import * as styles from "./AboutUs.styles";
 
 export default function AboutUs() {
   const content = [
-    "We're committed to being your trusted partner for a wide array of construction and maintenance services. ",
-    "At EMIKA, we take pride in delivering comprehensive solutions tailored to meet the needs of businesses and communities across our service area. ",
-    "From line painting to sidewalk repair and snow removal, we're dedicated to addressing all your requirements with professionalism and efficiency.",
+    "At EMIKA, we're dedicated to providing a wide range of construction and maintenance services tailored to your needs. ",
+    "From line painting to snow removal, we deliver comprehensive solutions with professionalism and efficiency.",
   ];
   return (
     <section id="about_us" className={styles.main_container}>
       <div className={styles.container}>
         <Title>About us</Title>
         <div className={styles.content_container}>
-          <div className={styles.left_container}>
-            {content.map((text, index) => (
-              <p key={`about-us-section-text-${index}`} className={styles.text}>
-                {text}
-              </p>
-            ))}
-          </div>
-          <img className={styles.img} src={Image} alt="About us image" />
+          {content.map((text, index) => (
+            <p key={`about-us-section-text-${index}`} className={styles.text}>
+              {text}
+            </p>
+          ))}
         </div>
       </div>
+      <img className={styles.img} src={Image} alt="About us image" />
     </section>
   );
 }

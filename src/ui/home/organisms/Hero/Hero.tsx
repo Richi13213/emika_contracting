@@ -1,5 +1,11 @@
 import * as styles from "./Hero.styles";
+function scrollToSmoothly(elementId: string) {
+  const element = document.getElementById(elementId);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
 
+  }
+}
 export default function Hero() {
   return (
     <section className={styles.main_container}>
@@ -17,7 +23,7 @@ export default function Hero() {
             <br />
             Services
           </h3>
-          <button className={styles.button}>Learn more</button>
+          <button onClick={() => scrollToSmoothly("contact")} className={styles.button}>Learn more</button>
         </article>
       </div>
     </section>

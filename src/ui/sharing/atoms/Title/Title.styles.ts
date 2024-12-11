@@ -8,6 +8,7 @@ export const title = cx(
     font-weight: bold;
     position: relative;
     color: var(--accent-color);
+    z-index: 20;
   `,
   responsive.title
 );

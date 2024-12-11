@@ -26,8 +26,31 @@ export const text = cx(
 
 export const content_container = cx(
   forsize({
-    "tablet-landscape": css`
-      flex-direction: column;
+    "tablet-portrait": css`
+      width: 100%;
+    `,
+  })
+);
+
+export const main_container = cx(
+  forsize({
+    "tablet-portrait": css`
+    &::before{
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: rgb(0, 0, 0, .45);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+    & h2, p {
+      color: var(--hero-text);
+    }
+    & p {
+      font-weight: bold;
+    }
     `,
   })
 );
@@ -43,7 +66,18 @@ export const left_container = cx(
 export const img = cx(
   forsize({
     "tablet-landscape": css`
-      width: 100%;
+      mask-image: linear-gradient(270deg, rgba(253,251,246,1) 40%, rgba(255,255,255,0) 70%);
     `,
+    "tablet-portrait": css`
+      mask-image: none;
+      width: 100%;
+      height: auto;
+    `,
+    "phone-xbig": css`
+      width: auto;
+      min-width: 100%;
+      height: 100%;
+    `
+
   })
 );

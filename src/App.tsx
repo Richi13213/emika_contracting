@@ -1,16 +1,13 @@
-import { Hero, AboutUs, OurServices, WhyChooseUs, ContactUs } from "@organisms";
-import { Header } from "@sharing/organisms";
+import { lazy, Suspense } from "react"
+import { Hero, AboutUs } from "@organisms";
+import { Header, Footer } from "@sharing/organisms";
 import * as styles from "./App.styles";
-import { Resend } from "resend";
 
-const resend = new Resend("re_i4vyp8BY_8RdKwms1CGQwRHGKui78Ey6V");
+const OurServices = lazy(() => import('./ui/home/organisms/OurServices/OurServices'));
+const WhyChooseUs = lazy(() => import('./ui/home/organisms/WhyChooseUs/WhyChooseUs'));
+const ContactUs = lazy(() => import('./ui/home/organisms/ContactUs/ContactUs'));
 
-resend.emails.send({
-  from: "andresjimenezipn@gmail.com",
-  to: "andresjimenezipn@gmail.com",
-  subject: "Hello World",
-  html: "<p>Congrats on sending your <strong>first email</strong>!</p>",
-});
+
 
 function App() {
   return (
@@ -19,10 +16,14 @@ function App() {
       <main className={styles.main_container}>
         <Hero />
         <AboutUs />
-        <OurServices />
-        <WhyChooseUs />
-        <ContactUs />
+        <Suspense fallback={<div>Loading...</div>}>
+          <OurServices />
+          <WhyChooseUs />
+          <ContactUs />
+        </Suspense>
+
       </main>
+      <Footer />
     </>
   );
 }

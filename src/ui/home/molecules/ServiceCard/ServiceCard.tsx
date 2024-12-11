@@ -4,13 +4,13 @@ import * as styles from "./ServiceCard.styles";
 export default function ServiceCard({
   title,
   image,
-  content,
 }: ServiceCardData) {
   return (
     <div className={styles.card}>
-      <h5 className={styles.title}>{title}</h5>
+      <div className={styles.text_card}>
+        <h5 className={styles.title}>{title}</h5>
+      </div>
       <img {...image} className={styles.image} />
-      <p className={styles.text}>{content}</p>
     </div>
   );
 }

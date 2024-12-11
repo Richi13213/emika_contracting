@@ -1,14 +1,61 @@
+import { useState } from "react";
 import { useFormik } from "formik";
 import { INITIAL_VALUES } from "@constants/contact";
 import { ContactSchema } from "@schemas/contact";
 import { FormikHandlerParams } from "@typing/props";
+import { sendContact } from "@services/contact";
 
 const useContactForm = () => {
+  const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccesMesssage] = useState(false);
+  const [errorMessage, setErrorMesssage] = useState(false);
+
+  const handleLoading = (value: boolean) => {
+    setLoading(value);
+  };
+
+  const handleSuccessMessage = (value: boolean) => {
+    setSuccesMesssage(value);
+  };
+
+  const handleErrorMessage = (value: boolean) => {
+    setErrorMesssage(value);
+  };
+
   const loginFormik = useFormik({
     initialValues: INITIAL_VALUES,
     validationSchema: ContactSchema,
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async (values) => {
+      try {
+        handleLoading(true);
+        const result = await sendContact({
+          ...values,
+          phone_number: values.phone_number.toString(),
+        });
+        setTimeout(()=> {
+          handleLoading(false);
+          if (!result) {
+            handleErrorMessage(true);
+            setTimeout(() => {
+              handleErrorMessage(false);
+            }, 5000);
+            return;
+          }
+          handleSuccessMessage(true);
+          setTimeout(() => {
+            handleSuccessMessage(false);
+          }, 5000);
+        }, 4000);
+      } catch (error) {
+        console.error(error);
+        handleLoading(false);
+        handleErrorMessage(true);
+        setTimeout(() => {
+          handleErrorMessage(false);
+        }, 5000);
+        return;
+      } 
+      return;
     },
   });
 
@@ -32,6 +79,9 @@ const useContactForm = () => {
     handleManualValues,
     handleManualTouched,
     handleManualError,
+    loading,
+    successMessage,
+    errorMessage
   };
 };
 

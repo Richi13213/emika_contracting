@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SelectProps } from "@typing/props";
 import { servicesOptions } from "@data/services";
-import { InputLabel } from "@sharing/atoms";
+import { InputLabel, ErrorLabel } from "@sharing/atoms";
 
 import * as styles from "./Select.styles";
 
@@ -14,8 +14,8 @@ export default function Select({
   handleManualValues,
 }: SelectProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const inputError = !!(touched && error && value !== "");
-  const inputValid = touched && !error;
+  const inputError = !!(touched && error);
+  const inputValid = !!(touched && !error);
   const labelProps = {
     id,
     focused: value !== "",
@@ -37,8 +37,8 @@ export default function Select({
       <InputLabel {...labelProps}>{label}</InputLabel>
       <div
         className={styles.select_input({
-          inputError: false,
-          inputValid: false,
+          inputError,
+          inputValid,
           isOpen,
         })}
         onClick={handleClick}
@@ -58,6 +58,11 @@ export default function Select({
           ))}
         </div>
       )}
+      {error && touched && 
+        <ErrorLabel>
+          {error}
+        </ErrorLabel>
+      }
     </div>
   );
 }

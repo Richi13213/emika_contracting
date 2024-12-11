@@ -14,9 +14,9 @@ export const link = cx(
       min-height: 4px;
       content: "";
       position: absolute;
-      bottom: 0;
+      bottom: -2px;
       left: 0;
-      background: var(--accent-color);
+      background: #0f2942;
       border-radius: 4px;
       transition: width 0.3s ease-in-out;
     }

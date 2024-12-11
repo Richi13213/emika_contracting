@@ -1,16 +1,10 @@
 import { css, cx } from "@emotion/css";
 import { flex, content } from "@mixins";
-import Bg from "@images/about_us/wave.webp";
 
 export const main_container = cx(
   flex({}),
   css`
     width: 100%;
-    background-color: #fff;
-    background-image: url(${Bg});
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: 100% auto;
   `
 );
 

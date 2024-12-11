@@ -1,25 +1,21 @@
 import { css, cx } from "@emotion/css";
 import { flex, content } from "@mixins";
 import * as responsive from "./AboutUs.styles.responsive";
-import Bg from "@images/about_us/wave.webp";
 
 export const main_container = cx(
   flex({}),
   css`
     width: 100%;
-    background-color: #fff;
-    background-image: url(${Bg});
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: 100% auto;
-  `
+    position: relative;
+    overflow: hidden;
+  `, responsive.main_container
 );
 
 export const container = cx(
   content({}),
   flex({
     justify: "flex-start",
-    align: "center",
+    align: "start",
     gap: "30px",
   }),
   css`
@@ -34,9 +30,11 @@ export const content_container = cx(
     justify: "center",
     align: "center",
     gap: "30px",
+    direction: "column",
   }),
   css`
-    width: 100%;
+    width: 60%;
+    overflow: hidden;
   `,
   responsive.content_container
 );
@@ -56,11 +54,14 @@ export const left_container = cx(
 
 export const img = cx(
   css`
-    width: calc(50% - 15px);
-    max-width: 900px;
-    height: auto;
-  `,
-  responsive.img
+    width: auto;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    mask-image: linear-gradient(270deg, rgba(253,251,246,1) 60%, rgba(255,255,255,0) 90%);
+  `, responsive.img
 );
 
 export const text = cx(
@@ -69,7 +70,8 @@ export const text = cx(
     font-size: 30px;
     font-weight: 500;
     position: relative;
-    color: var(--text-black);
+    color: var(--accent-color);
+    z-index: 2;
   `,
   responsive.text
 );

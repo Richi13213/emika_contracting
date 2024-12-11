@@ -9,6 +9,6 @@ export const input_container = cx(
   css`
     width: 100%;
     position: relative;
-    margin-top: 25px;
+    margin-top: 20px;
   `
 );

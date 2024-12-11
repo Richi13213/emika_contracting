@@ -7,7 +7,7 @@ export const label = ({
   inputValid,
 }: LabelInputStyleProps) => css`
   position: absolute;
-  left: ${!focused ? `.75rem` : `0rem`};
+  left: ${!focused ? `.75rem` : `.3rem`};
   top: ${!focused ? `50%` : `0%`};
   transition: all 0.3s ease-in-out;
   transform: ${!focused ? `translateY(-50%)` : `translateY(-110%)`};

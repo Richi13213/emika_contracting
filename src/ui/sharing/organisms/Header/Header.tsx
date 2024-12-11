@@ -7,11 +7,12 @@ export default function Header() {
   const [active, setActive] = useState<boolean>(false);
 
   const handleToggleMenu = () => {
+    document.body.style.overflow = (active ? 'auto' : 'hidden');
     setActive(!active);
   };
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header(active)}>
       <nav className={styles.container}>
         <p className={styles.logo}>EMIKA</p>
         <MenuButton onChange={handleToggleMenu} />

@@ -99,6 +99,7 @@ export const button = cx(
     overflow: hidden;
     position: relative;
     opacity: 0;
+    transition: all .25s ease-in-out;
     animation: ${fadeFromBottom} 1.5s ease-in-out 2s forwards;
     &::before {
       content: "";
@@ -109,6 +110,7 @@ export const button = cx(
       width: 0;
       background-color: var(--accent-color);
       z-index: -1;
+      transition: all .25s ease-in-out;
       animation: ${buttonFill} 1s ease-in-out 3s forwards;
     }
     &:hover {

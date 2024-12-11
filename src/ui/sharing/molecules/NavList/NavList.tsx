@@ -5,7 +5,8 @@ import * as styles from "./NavList.styles";
 function scrollToSmoothly(elementId: string) {
   const element = document.getElementById(elementId);
   if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
+    element.scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
+
   }
 }
 
