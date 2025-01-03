@@ -52,7 +52,7 @@ export const servicesData: Array<ServiceCardData> = [
     },
   },
   {
-    title: "General Contracting",
+    title: "General Construction",
     image: {
       src: GeneralContracting,
       alt: "",

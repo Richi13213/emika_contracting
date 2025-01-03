@@ -6,6 +6,6 @@ export const ContactSchema = object({
   first_name: string().required(REQUIRED_ERROR),
   last_name: string().required(REQUIRED_ERROR),
   email: string().matches(EMAIL_REGEX, EMAIL_ERROR).required(REQUIRED_ERROR),
-  phone_number: string().matches(PHONE_REGEX, NUMBER_ERROR).required(REQUIRED_ERROR),
+  phone_number: string().min(10).max(10).matches(PHONE_REGEX, NUMBER_ERROR).required(REQUIRED_ERROR),
   service: string().required(REQUIRED_ERROR),
 });

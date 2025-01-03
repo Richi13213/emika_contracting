@@ -14,7 +14,7 @@ export default function Hero() {
           <h1 className={styles.title}>
             Welcome to EMIKA
             <br />
-            Contracting
+            Construction
           </h1>
           <h3 className={styles.subtitle}>
             Your Trusted Source for Expert

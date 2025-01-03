@@ -11,7 +11,7 @@ export default function ContactUs() {
           <ContactForm />
           <div className={styles.text_container}>
             <p className={styles.text}>
-              <b>Ready to start your next project with Emika Contracting?</b>
+              <b>Ready to start your next project with Emika Construction?</b>
             </p>
             <p className={styles.text}>
               Contact us today for a free consultation and discover how we can
