@@ -13,14 +13,14 @@ export default function Footer() {
           <p className={styles.info_text}>
             <span>Email:</span>{" "}
             <a
-              href="mailto:info@emikaConstruction.ca"
+              href="mailto:info@emikaconstruction.ca"
               className={styles.info_link}
             >
-              info@emikaConstruction.ca
+              info@emikaconstruction.ca
             </a>
           </p>
           <p className={styles.info_text}>
-            <span>Phone:</span> +1 705-309-9360
+            <span>Phone:</span> +1 6478015900
           </p>
         </div>
       </div>
