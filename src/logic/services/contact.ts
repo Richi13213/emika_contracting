@@ -1,12 +1,20 @@
 import { InitialValiesInterface } from "@typing/constants";
 import axios from "axios";
-
 export const sendContact = async (values: InitialValiesInterface) => {
   try {
-    const { data } = await axios.post("https://backend-emika-1b5936e56e3c.herokuapp.com/contacts/create", values);
-    return data.success;
+    const { data } = await axios.post(
+      "https://q2baaxwcjimj3vimfaf6ucipqm0ghmqg.lambda-url.us-east-1.on.aws/",
+      values,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    return Boolean(data?.ok);
   } catch (error) {
-    console.error(error);
+    console.error("Error sending contact form:", error);
     return false;
   }
 };
