@@ -1,48 +1,46 @@
-import { css, cx } from "@emotion/css";
-import * as responsive from "./MenuButton.styles.responsive";
+import { css } from "@emotion/css";
 
-export const hamburguer = cx(
-  css`
-    display: none;
-    z-index: 999999;
-    & input {
-      cursor: pointer;
-      display: none;
-    }
-    & svg {
-      height: 3em;
-      transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    & input:checked + svg {
-      transform: rotate(-45deg);
-    }
-    input:checked + svg #line_path {
-      stroke-dasharray: 20 300;
-      stroke-dashoffset: -32.42;
-    }
+export const hamburguer = (active: boolean) => css`
+  display: none;
+
+  @media (max-width: 960px) {
+    display: inline-grid;
+    gap: 0.32rem;
+    padding: 0.72rem;
+    border-radius: 1rem;
+    background: rgba(16, 37, 54, 0.06);
+    border: 1px solid rgba(16, 37, 54, 0.08);
+    z-index: 110;
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease;
+
     &:hover {
-      cursor: pointer;
+      background: rgba(191, 111, 52, 0.12);
+      transform: translateY(-1px);
     }
-  `,
-  responsive.hamburguer
-);
+  }
 
-export const line = cx(
-  css`
-    fill: none;
-    stroke: black;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 3;
-    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-  `
-);
+  & span:nth-of-type(1) {
+    transform: ${active ? "translateY(0.44rem) rotate(45deg)" : "none"};
+  }
 
-export const line_top_bottom = cx(
-  css`
-    stroke-dasharray: 12 63;
-  `
-);
+  & span:nth-of-type(2) {
+    opacity: ${active ? "0" : "1"};
+  }
 
-export const line_path = cx(line, line_top_bottom);
+  & span:nth-of-type(3) {
+    transform: ${active ? "translateY(-0.44rem) rotate(-45deg)" : "none"};
+  }
+`;
+
+export const line = css`
+  width: 1.45rem;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--color-primary);
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    background-color 0.25s ease;
+`;

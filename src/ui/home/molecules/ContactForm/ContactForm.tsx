@@ -21,33 +21,32 @@ export default function ContactForm() {
   return (
     <>
       {loading && <Loader />}
-      {successMessage && (
-        <div className={styles.container}>
-          <div className={styles.card}>
-            <p>
-              Contact information sent successfully, we will contact you
-              shortly. Thank you for your preference.
-            </p>
+      <form className={styles.form} onSubmit={formikSubmit} noValidate>
+        <p className={styles.form_intro}>
+          Tell us what your property needs and we&apos;ll follow up shortly.
+        </p>
+
+        {successMessage && (
+          <div className={styles.notice("success")} role="status" aria-live="polite">
+            Your request was sent successfully. We&apos;ll be in touch soon.
           </div>
-        </div>
-      )}
-      {errorMessage && (
-        <div className={styles.container}>
-          <div className={styles.card}>
-            <p>
-              We're sorry, an error occurred while sending your information. If
-              the problem persists, please contact us.
-            </p>
+        )}
+
+        {errorMessage && (
+          <div className={styles.notice("error")} role="alert">
+            We couldn&apos;t send your request right now. Please try again or
+            contact us directly by phone or email.
           </div>
-        </div>
-      )}
-      <form className={styles.form} onSubmit={formikSubmit}>
+        )}
+
         <InputForm
           id="first_name"
           type="text"
           error={errors.first_name || ""}
           label="First name"
           touched={touched.first_name || false}
+          placeholder="Alex"
+          autoComplete="given-name"
           {...getFieldProps("first_name")}
         />
         <InputForm
@@ -56,29 +55,35 @@ export default function ContactForm() {
           error={errors.last_name || ""}
           label="Last name"
           touched={touched.last_name || false}
+          placeholder="Morgan"
+          autoComplete="family-name"
           {...getFieldProps("last_name")}
         />
         <InputForm
           id="email"
-          type="text"
+          type="email"
           error={errors.email || ""}
           label="Email"
           touched={touched.email || false}
+          placeholder="name@company.com"
+          autoComplete="email"
           {...getFieldProps("email")}
         />
         <InputForm
           id="phone_number"
-          type="number"
+          type="tel"
           error={errors.phone_number || ""}
-          label="Phone Number"
+          label="Phone number"
           touched={touched.phone_number || false}
+          placeholder="(555) 555-5555"
+          autoComplete="tel"
           {...getFieldProps("phone_number")}
         />
         <Select
           id="service"
           value={serviceValue}
           error={errors.service || ""}
-          label="Services"
+          label="Service needed"
           touched={touched.service || false}
           handleManualTouched={handleManualTouched}
           handleManualError={handleManualError}
@@ -86,8 +91,11 @@ export default function ContactForm() {
         />
         <div className={styles.button_container}>
           <button type="submit" className={styles.button}>
-            Register
+            Request consultation
           </button>
+          <p className={styles.disclaimer}>
+            We only use your information to respond to this request.
+          </p>
         </div>
       </form>
     </>

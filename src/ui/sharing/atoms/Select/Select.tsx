@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { SelectProps } from "@typing/props";
 import { servicesOptions } from "@data/services";
 import { InputLabel, ErrorLabel } from "@sharing/atoms";
@@ -11,58 +10,45 @@ export default function Select({
   error,
   label,
   touched,
+  className,
   handleManualValues,
+  handleManualTouched,
+  handleManualError,
 }: SelectProps) {
-  const [isOpen, setIsOpen] = useState(false);
-  const inputError = !!(touched && error);
-  const inputValid = !!(touched && !error);
-  const labelProps = {
-    id,
-    focused: value !== "",
-    inputError,
-    inputValid,
-  };
-
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleChange = (value: string) => {
-    handleManualValues({ field: id, value });
-    handleClick();
-  };
+  const inputError = Boolean(touched && error);
+  const inputValid = Boolean(touched && !error);
 
   return (
     <div className={styles.container}>
-      <InputLabel {...labelProps}>{label}</InputLabel>
-      <div
-        className={styles.select_input({
+      <InputLabel id={id}>{label}</InputLabel>
+      <select
+        id={id}
+        name={id}
+        value={value}
+        className={`${styles.select_input({
           inputError,
           inputValid,
-          isOpen,
-        })}
-        onClick={handleClick}
+        })} ${className || ""}`.trim()}
+        aria-invalid={inputError || undefined}
+        aria-describedby={inputError ? `${id}-error` : undefined}
+        onChange={(event) => {
+          handleManualValues({ field: id, value: event.target.value });
+          handleManualError({ field: id });
+        }}
+        onBlur={() => handleManualTouched({ field: id })}
       >
-        {value || ""}
-      </div>
-      {isOpen && (
-        <div className={styles.option_container}>
-          {servicesOptions.map((option) => (
-            <div
-              key={option}
-              className={styles.option}
-              onClick={() => handleChange(option)}
-            >
-              {option}
-            </div>
-          ))}
-        </div>
-      )}
-      {error && touched && 
-        <ErrorLabel>
+        <option value="">Select a service</option>
+        {servicesOptions.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+      {inputError && (
+        <ErrorLabel id={`${id}-error`}>
           {error}
         </ErrorLabel>
-      }
+      )}
     </div>
   );
 }

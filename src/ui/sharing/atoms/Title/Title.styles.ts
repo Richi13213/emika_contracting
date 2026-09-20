@@ -1,14 +1,10 @@
-import { css, cx } from "@emotion/css";
-import * as responsive from "./Title.styles.responsive";
+import { css } from "@emotion/css";
 
-export const title = cx(
-  css`
-    text-align: left;
-    font-size: 60px;
-    font-weight: bold;
-    position: relative;
-    color: var(--accent-color);
-    z-index: 20;
-  `,
-  responsive.title
-);
+export const title = css`
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4.85rem);
+  line-height: 0.94;
+  letter-spacing: -0.065em;
+  color: var(--color-primary);
+  text-wrap: balance;
+`;

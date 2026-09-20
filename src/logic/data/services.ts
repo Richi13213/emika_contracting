@@ -9,63 +9,77 @@ import GeneralContracting from "@images/our_services/general_contracting.webp";
 
 export const servicesData: Array<ServiceCardData> = [
   {
+    eyebrow: "Site safety",
     title: "Curb and Sidewalk Repair",
+    description:
+      "Restore damaged pedestrian routes, edges and entrances to improve safety, drainage and overall first impressions.",
     image: {
       src: CurbSidewalkRepair,
-      alt: "Curb and Sidewalk Repair",
+      alt: "Freshly repaired curb and sidewalk at a commercial property",
     },
   },
   {
+    eyebrow: "Pavement care",
     title: "Asphalt Maintenance",
+    description:
+      "Protect traffic flow and extend pavement life with maintenance work that keeps parking lots looking organized and dependable.",
     image: {
       src: AsphaltMaintenance,
-      alt: "",
+      alt: "Commercial asphalt maintenance work in a parking lot",
     },
   },
   {
+    eyebrow: "Property upkeep",
     title: "Building Repair",
+    description:
+      "Address wear, damage and exterior repair needs before they become bigger interruptions for your site or tenants.",
     image: {
       src: BuildingRepair,
-      alt: "",
+      alt: "Exterior building repair work in progress",
     },
   },
   {
+    eyebrow: "Traffic clarity",
     title: "Line Painting",
+    description:
+      "Keep lots easy to navigate with crisp, durable markings that support safety, organization and a polished appearance.",
     image: {
       src: LinePainting,
-      alt: "Line Painting",
+      alt: "Fresh line painting in a parking lot",
     },
-
   },
   {
+    eyebrow: "Exterior appeal",
     title: "Landscaping",
+    description:
+      "Maintain clean, welcoming outdoor areas that strengthen curb appeal and reflect the standard of your property.",
     image: {
       src: Landscaping,
-      alt: "",
+      alt: "Maintained landscaping around a property entrance",
     },
   },
   {
+    eyebrow: "Seasonal readiness",
     title: "Snow Removal",
+    description:
+      "Reduce winter risk with responsive clearing for access routes, parking areas and walkways when conditions change fast.",
     image: {
       src: SnowRemoval,
-      alt: "",
+      alt: "Snow removal service clearing a commercial access route",
     },
   },
   {
-    title: "General Construction",
+    eyebrow: "Coordinated delivery",
+    title: "General Contracting",
+    description:
+      "Bring multiple scopes together under one accountable team focused on scheduling, detail and lasting workmanship.",
     image: {
       src: GeneralContracting,
-      alt: "",
+      alt: "General contracting work underway on a construction site",
     },
   },
 ];
 
-export const servicesOptions: Array<string> = [
-  "Line painting",
-  "Curb and Sidewalk Repair",
-  "Asphalt Maintenance",
-  "Building Repair",
-  "Landscaping",
-  "Snow Removal",
-  "General Contracting",
-];
+export const servicesOptions: Array<string> = servicesData.map(
+  ({ title }) => title
+);

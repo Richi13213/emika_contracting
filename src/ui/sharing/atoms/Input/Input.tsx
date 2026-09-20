@@ -1,13 +1,9 @@
-import { FocusEvent } from "react";
+import { cx } from "@emotion/css";
 import { InputProps } from "@typing/props";
 import * as styles from "./Input.styles";
 
 export default function Input({
-  error,
-  touched,
-  id,
-  type,
-  handleFocus,
+  className,
   inputError,
   inputValid,
   ...props
@@ -15,13 +11,7 @@ export default function Input({
   return (
     <input
       {...props}
-      className={styles.input({ inputError, inputValid })}
-      type={type}
-      onFocus={handleFocus}
-      onBlur={(e: FocusEvent<HTMLInputElement, Element>) => {
-        handleFocus();
-        props.onBlur(e);
-      }}
+      className={cx(styles.input({ inputError, inputValid }), className)}
     />
   );
 }

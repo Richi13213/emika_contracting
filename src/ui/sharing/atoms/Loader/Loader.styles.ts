@@ -1,39 +1,48 @@
 import { css, cx, keyframes } from "@emotion/css";
 import { flex } from "@mixins";
 
-export const animate8345 = keyframes`
-0%,100% {
-  filter: hue-rotate(0deg);
-}
-
-50% {
-  filter: hue-rotate(360deg);
-}
+const spin = keyframes`
+  to {
+    transform: rotate(360deg);
+  }
 `;
 
 export const container = cx(
   flex({}),
   css`
     position: fixed;
+    inset: 0;
     z-index: 99999;
-    background: rgb(0, 0, 0, 0.8);
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
+    background: rgba(9, 24, 35, 0.42);
+    backdrop-filter: blur(8px);
   `
 );
 
+export const panel = cx(
+  flex({
+    direction: "column",
+    gap: "16px",
+  }),
+  css`
+    min-width: 280px;
+    padding: 1.8rem;
+    border-radius: 1.5rem;
+    background: rgba(255, 253, 249, 0.96);
+    box-shadow: var(--shadow-card);
+  `
+);
+
+export const spinner = css`
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 4px solid rgba(16, 37, 54, 0.12);
+  border-top-color: var(--color-accent);
+  animation: ${spin} 0.9s linear infinite;
+`;
+
 export const loader = css`
-  color: rgb(0, 0, 0);
-  background: linear-gradient(to right, #3498db, #77c9ff);
-  font-size: 40px;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  animation: ${animate8345} 9s linear infinite;
-  font-weight: bold;
-  position: absolute;
-  left: 50%;
-  top: 10%;
-  transform: translateX(-50%);
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 700;
 `;

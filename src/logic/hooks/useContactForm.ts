@@ -10,78 +10,72 @@ const useContactForm = () => {
   const [successMessage, setSuccesMesssage] = useState(false);
   const [errorMessage, setErrorMesssage] = useState(false);
 
-  const handleLoading = (value: boolean) => {
-    setLoading(value);
-  };
-
-  const handleSuccessMessage = (value: boolean) => {
-    setSuccesMesssage(value);
-  };
-
-  const handleErrorMessage = (value: boolean) => {
-    setErrorMesssage(value);
-  };
-
-  const loginFormik = useFormik({
+  const contactFormik = useFormik({
     initialValues: INITIAL_VALUES,
     validationSchema: ContactSchema,
     onSubmit: async (values) => {
       try {
-        handleLoading(true);
+        setLoading(true);
+        setSuccesMesssage(false);
+        setErrorMesssage(false);
+
+        const normalizedPhone = values.phone_number
+          .replace(/\D/g, "")
+          .replace(/^1/, "");
+
         const result = await sendContact({
           ...values,
-          phone_number: values.phone_number.toString(),
+          phone_number: normalizedPhone,
         });
-        setTimeout(()=> {
-          handleLoading(false);
-          if (!result) {
-            handleErrorMessage(true);
-            setTimeout(() => {
-              handleErrorMessage(false);
-            }, 5000);
-            return;
-          }
-          handleSuccessMessage(true);
+
+        if (!result) {
+          setErrorMesssage(true);
           setTimeout(() => {
-            handleSuccessMessage(false);
+            setErrorMesssage(false);
           }, 5000);
-        }, 4000);
+          return;
+        }
+
+        contactFormik.resetForm();
+        setSuccesMesssage(true);
+        setTimeout(() => {
+          setSuccesMesssage(false);
+        }, 5000);
       } catch (error) {
         console.error(error);
-        handleLoading(false);
-        handleErrorMessage(true);
+        setErrorMesssage(true);
         setTimeout(() => {
-          handleErrorMessage(false);
+          setErrorMesssage(false);
         }, 5000);
-        return;
-      } 
-      return;
+      } finally {
+        setLoading(false);
+      }
     },
   });
 
   const handleManualValues = ({ field, value }: FormikHandlerParams) => {
-    loginFormik.setFieldValue(field, value);
+    contactFormik.setFieldValue(field, value);
   };
 
   const handleManualTouched = ({ field }: FormikHandlerParams) => {
-    loginFormik.setFieldTouched(field, true);
+    contactFormik.setFieldTouched(field, true);
   };
 
   const handleManualError = ({ field }: FormikHandlerParams) => {
-    loginFormik.setFieldError(field, "");
+    contactFormik.setFieldError(field, "");
   };
 
   return {
-    formikSubmit: loginFormik.handleSubmit,
-    getFieldProps: loginFormik.getFieldProps,
-    touched: loginFormik.touched,
-    errors: loginFormik.errors,
+    formikSubmit: contactFormik.handleSubmit,
+    getFieldProps: contactFormik.getFieldProps,
+    touched: contactFormik.touched,
+    errors: contactFormik.errors,
     handleManualValues,
     handleManualTouched,
     handleManualError,
     loading,
     successMessage,
-    errorMessage
+    errorMessage,
   };
 };
 

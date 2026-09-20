@@ -1,11 +1,11 @@
-import { NavLinkProps } from "@typing/props";
+import type { NavLinkProps } from "@typing/props";
 
 import * as styles from "./NavLink.styles";
 
-export default function NavLink({ section, children, ...props }: NavLinkProps) {
+export default function NavLink({ children, href, ...props }: NavLinkProps) {
   return (
-    <p className={styles.link} {...props}>
+    <a className={styles.link} href={href} {...props}>
       {children}
-    </p>
+    </a>
   );
 }

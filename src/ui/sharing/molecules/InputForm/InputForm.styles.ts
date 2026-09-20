@@ -4,11 +4,10 @@ import { flex } from "@mixins";
 export const input_container = cx(
   flex({
     direction: "column",
-    gap: "10px",
+    gap: "8px",
   }),
   css`
     width: 100%;
-    position: relative;
-    margin-top: 20px;
+    min-width: 0;
   `
 );

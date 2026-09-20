@@ -9,5 +9,5 @@ export const INITIAL_VALUES: InitialValiesInterface = {
 };
 
 export const REQUIRED_ERROR = "Field required";
-export const NUMBER_ERROR = "Invalid number format";
-export const EMAIL_ERROR = "Invalid number format";
+export const NUMBER_ERROR = "Enter a valid North American phone number";
+export const EMAIL_ERROR = "Enter a valid email address";

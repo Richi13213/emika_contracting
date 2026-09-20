@@ -1,7 +1,7 @@
 import { InputLabel, Input, ErrorLabel } from "@sharing/atoms";
-import { useInput } from "@hooks";
 import type { InputFormProps } from "@typing/props";
 import * as styles from "./InputForm.styles";
+
 export default function InputForm({
   id,
   type,
@@ -10,35 +10,26 @@ export default function InputForm({
   touched,
   ...props
 }: InputFormProps) {
-  const { handleFocus, focused } = useInput();
-  const inputError = !!(touched && error);
-  const inputValid = touched && !error;
-  const inputProps = {
-    id,
-    type,
-    error,
-    touched,
-    inputError,
-    inputValid,
-    handleFocus,
-    ...props,
-  };
-  const labelProps = {
-    id,
-    focused: focused || props.value !== "",
-    inputError,
-    inputValid,
-  };
+  const inputError = Boolean(touched && error);
+  const inputValid = Boolean(touched && !error);
 
   return (
     <div className={styles.input_container}>
-      <InputLabel {...labelProps}>{label}</InputLabel>
-      <Input {...inputProps} />
-      {error && touched && 
-        <ErrorLabel>
+      <InputLabel id={id}>{label}</InputLabel>
+      <Input
+        id={id}
+        type={type}
+        inputError={inputError}
+        inputValid={inputValid}
+        aria-invalid={inputError || undefined}
+        aria-describedby={inputError ? `${id}-error` : undefined}
+        {...props}
+      />
+      {inputError && (
+        <ErrorLabel id={`${id}-error`}>
           {error}
         </ErrorLabel>
-      }
+      )}
     </div>
   );
 }

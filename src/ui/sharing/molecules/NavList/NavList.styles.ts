@@ -1,20 +1,38 @@
 import { css, cx } from "@emotion/css";
 import { flex } from "@mixins";
-import * as responsive from "./NavList.styles.responsive";
 
 export const nav_list = (active: boolean) =>
   cx(
     flex({
       justify: "space-between",
-      gap: "30px",
+      gap: "12px",
     }),
     css`
-      min-width: 45%;
-      & li {
-        list-style: none;
+      align-items: center;
+      padding: 0.45rem;
+      border-radius: 999px;
+      background: rgba(16, 37, 54, 0.04);
+
+      @media (max-width: 960px) {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 0;
+        background: none;
+        opacity: ${active ? "1" : "0"};
+        transition: opacity 0.2s ease;
       }
-    `,
-    responsive.nav_list(active)
+    `
   );
 
-export const nav_list_item = cx(flex({}), css``, responsive.nav_list_item);
+export const nav_list_item = cx(
+  flex({}),
+  css`
+    width: auto;
+
+    @media (max-width: 960px) {
+      width: 100%;
+    }
+  `
+);
