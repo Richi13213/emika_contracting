@@ -1,0 +1,15 @@
+{
+  "brand": "EMIKA",
+  "colors": {
+    "royalBlue": "#123DA6",
+    "charcoal": "#1A1A1A",
+    "warmOffWhite": "#F8F7F3",
+    "coolGray": "#8A9AA6",
+    "white": "#FFFFFF"
+  },
+  "recommended_usage": {
+    "light_background_logo": "emika-logo-dark",
+    "dark_background_logo": "emika-logo-light",
+    "favicon_symbol": "emika-symbol-dark"
+  }
+}

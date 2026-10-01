@@ -1,0 +1,212 @@
+{
+  "project": "EMIKA commercial interior renovation \u2014 exact client/project name not supplied",
+  "publication_rule": "Use as EMIKA project media only if the owner confirms these are authorized project photos. Do not identify the visible third-party brand/client in copy, metadata, alt text, schema, or SEO unless that relationship is explicitly approved.",
+  "important": "The submitted before/after photographs were not shot from identical camera positions. Do not use a pixel-overlay drag slider unless a genuinely aligned pair is supplied. Prefer side-by-side Before / After cards, a toggle/crossfade, or a project-process gallery.",
+  "pair_candidates": [
+    {
+      "name": "Feature wall / cladding",
+      "before": [
+        "02",
+        "05",
+        "09"
+      ],
+      "after": [
+        "03",
+        "14"
+      ],
+      "recommended": [
+        "02",
+        "03"
+      ],
+      "note": "Same general wall transformation; viewpoints differ."
+    },
+    {
+      "name": "Service counter / interior area",
+      "before": [
+        "06",
+        "08"
+      ],
+      "after": [
+        "13",
+        "16",
+        "17"
+      ],
+      "recommended": [
+        "06",
+        "16"
+      ],
+      "note": "Shows construction state versus near-complete millwork/counter area; viewpoints differ."
+    },
+    {
+      "name": "Upper facade / architectural cladding",
+      "before": [
+        "07",
+        "04"
+      ],
+      "after": [
+        "11",
+        "12"
+      ],
+      "recommended": [
+        "07",
+        "12"
+      ],
+      "note": "Useful as progress-to-result comparison rather than precise slider."
+    }
+  ],
+  "items": [
+    {
+      "id": "01",
+      "original": "originals/emika-project-01.jpg",
+      "web": "web/emika-project-01.webp",
+      "width": 1536,
+      "height": 2048,
+      "orientation": "portrait",
+      "suggested_stage": "progress"
+    },
+    {
+      "id": "02",
+      "original": "originals/emika-project-02.jpg",
+      "web": "web/emika-project-02.webp",
+      "width": 1152,
+      "height": 2048,
+      "orientation": "portrait",
+      "suggested_stage": "before_or_progress"
+    },
+    {
+      "id": "03",
+      "original": "originals/emika-project-03.jpg",
+      "web": "web/emika-project-03.webp",
+      "width": 1536,
+      "height": 2048,
+      "orientation": "portrait",
+      "suggested_stage": "after_or_near_complete"
+    },
+    {
+      "id": "04",
+      "original": "originals/emika-project-04.jpg",
+      "web": "web/emika-project-04.webp",
+      "width": 2048,
+      "height": 1152,
+      "orientation": "landscape",
+      "suggested_stage": "progress"
+    },
+    {
+      "id": "05",
+      "original": "originals/emika-project-05.jpg",
+      "web": "web/emika-project-05.webp",
+      "width": 1536,
+      "height": 2048,
+      "orientation": "portrait",
+      "suggested_stage": "before_or_progress"
+    },
+    {
+      "id": "06",
+      "original": "originals/emika-project-06.jpg",
+      "web": "web/emika-project-06.webp",
+      "width": 1536,
+      "height": 2048,
+      "orientation": "portrait",
+      "suggested_stage": "before_or_progress"
+    },
+    {
+      "id": "07",
+      "original": "originals/emika-project-07.jpg",
+      "web": "web/emika-project-07.webp",
+      "width": 1152,
+      "height": 2048,
+      "orientation": "portrait",
+      "suggested_stage": "before_or_progress"
+    },
+    {
+      "id": "08",
+      "original": "originals/emika-project-08.jpg",
+      "web": "web/emika-project-08.webp",
+      "width": 1536,
+      "height": 2048,
+      "orientation": "portrait",
+      "suggested_stage": "before_or_progress"
+    },
+    {
+      "id": "09",
+      "original": "originals/emika-project-09.jpg",
+      "web": "web/emika-project-09.webp",
+      "width": 1536,
+      "height": 2048,
+      "orientation": "portrait",
+      "suggested_stage": "before_or_progress"
+    },
+    {
+      "id": "10",
+      "original": "originals/emika-project-10.jpg",
+      "web": "web/emika-project-10.webp",
+      "width": 1536,
+      "height": 2048,
+      "orientation": "portrait",
+      "suggested_stage": "after_or_near_complete"
+    },
+    {
+      "id": "11",
+      "original": "originals/emika-project-11.jpg",
+      "web": "web/emika-project-11.webp",
+      "width": 2048,
+      "height": 1536,
+      "orientation": "landscape",
+      "suggested_stage": "after_or_near_complete"
+    },
+    {
+      "id": "12",
+      "original": "originals/emika-project-12.jpg",
+      "web": "web/emika-project-12.webp",
+      "width": 2048,
+      "height": 1536,
+      "orientation": "landscape",
+      "suggested_stage": "after_or_near_complete"
+    },
+    {
+      "id": "13",
+      "original": "originals/emika-project-13.jpg",
+      "web": "web/emika-project-13.webp",
+      "width": 2048,
+      "height": 1536,
+      "orientation": "landscape",
+      "suggested_stage": "after_or_near_complete"
+    },
+    {
+      "id": "14",
+      "original": "originals/emika-project-14.jpg",
+      "web": "web/emika-project-14.webp",
+      "width": 1536,
+      "height": 2048,
+      "orientation": "portrait",
+      "suggested_stage": "after_or_near_complete"
+    },
+    {
+      "id": "15",
+      "original": "originals/emika-project-15.jpg",
+      "web": "web/emika-project-15.webp",
+      "width": 1536,
+      "height": 2048,
+      "orientation": "portrait",
+      "suggested_stage": "after_or_near_complete"
+    },
+    {
+      "id": "16",
+      "original": "originals/emika-project-16.jpg",
+      "web": "web/emika-project-16.webp",
+      "width": 2048,
+      "height": 1536,
+      "orientation": "landscape",
+      "suggested_stage": "after_or_near_complete"
+    },
+    {
+      "id": "17",
+      "original": "originals/emika-project-17.jpg",
+      "web": "web/emika-project-17.webp",
+      "width": 1536,
+      "height": 2048,
+      "orientation": "portrait",
+      "suggested_stage": "after_or_near_complete"
+    }
+  ]
+}

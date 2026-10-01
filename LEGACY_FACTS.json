@@ -1,0 +1,36 @@
+{
+  "brand_display": "EMIKA",
+  "legacy_public_name": "EMIKA Construction",
+  "family_owned": true,
+  "location": "Barrie, Ontario, Canada",
+  "email": "info@emikaconstruction.ca",
+  "phone_display": "+1 (647) 801-5900",
+  "phone_e164": "+16478015900",
+  "services": [
+    "Curb and Sidewalk Repair",
+    "Asphalt Maintenance",
+    "Building Repair",
+    "Line Painting",
+    "Landscaping",
+    "Snow Removal",
+    "General Contracting"
+  ],
+  "contact_form": {
+    "endpoint": "https://q2baaxwcjimj3vimfaf6ucipqm0ghmqg.lambda-url.us-east-1.on.aws/",
+    "method": "POST",
+    "content_type": "application/json",
+    "success_condition": "Boolean(data?.ok)",
+    "fields": [
+      "first_name",
+      "last_name",
+      "email",
+      "phone_number",
+      "service"
+    ]
+  },
+  "verified_portfolio_data_present": false,
+  "verified_testimonials_present": false,
+  "verified_street_address_present": false,
+  "analytics_detected": false,
+  "canonical_domain_verified": false
+}
